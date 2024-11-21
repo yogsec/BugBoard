@@ -6,6 +6,10 @@ BugBoard is a powerful and intuitive dashboard designed specifically for bug hun
 
 ---
 
+## 🌐 BugBoard Live 👉 [BugBoard Live](https://hacker01x.github.io/BugBoard)
+
+---
+
 ## 🌟 Features
 
 - 🔍 **Comprehensive Vulnerability Assessment**: Detect vulnerabilities like SQL Injection, XSS, CSRF, and more.
