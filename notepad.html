@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Notepad</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    #notepad {
+      width: 80%;
+      margin: 20px auto;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px;
+      cursor: pointer;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div id="notepad">
+  <textarea id="noteInput" placeholder="Write your note here..."></textarea>
+  <button onclick="saveNote()">Save Note</button>
+  <button onclick="clearNote()">Clear Note</button>
+  <div id="savedNotes"></div>
+</div>
+
+<script>
+  // Load saved notes from local storage
+  window.onload = function () {
+    loadNotes();
+  };
+
+  // Save note to local storage
+  function saveNote() {
+    const noteInput = document.getElementById('noteInput');
+    const note = noteInput.value.trim();
+
+    if (note !== '') {
+      // Get existing notes or initialize an empty array
+      const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+
+      // Add the new note
+      savedNotes.push(note);
+
+      // Save the updated notes array to local storage
+      localStorage.setItem('notes', JSON.stringify(savedNotes));
+
+      // Clear the input field and reload the notes
+      noteInput.value = '';
+      loadNotes();
+    }
+  }
+
+  // Clear note input
+  function clearNote() {
+    document.getElementById('noteInput').value = '';
+  }
+
+  // Load and display saved notes
+  function loadNotes() {
+    const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+    const savedNotesContainer = document.getElementById('savedNotes');
+
+    // Clear previous notes
+    savedNotesContainer.innerHTML = '';
+
+    // Display each saved note
+    savedNotes.forEach(function (note) {
+      const noteDiv = document.createElement('div');
+      noteDiv.textContent = note;
+      savedNotesContainer.appendChild(noteDiv);
+    });
+  }
+</script>
+
+</body>
+</html>

