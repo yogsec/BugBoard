@@ -69,6 +69,13 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
+## Support & Contact 📬  
+- **LinkedIn Profile:** [Bug Bounty Hunter](https://www.linkedin.com/in/bug-bounty-hunter/)  
+- **Donations:** If you find this cheat sheet useful, consider supporting my work via [BuyMeACoffee](https://buymeacoffee.com/abhinavsingwal).  
+- **Email:** For inquiries, you can reach me at [abhinavsingwal@gmail.com](mailto:abhinavsingwal@gmail.com).
+  
+---
+
 ## ✨ Screenshots
 
 ![Alt text](https://private-user-images.githubusercontent.com/69685878/388544257-95540548-a8b2-4ab6-95bf-4beafe932bde.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzIxOTc4NjYsIm5iZiI6MTczMjE5NzU2NiwicGF0aCI6Ii82OTY4NTg3OC8zODg1NDQyNTctOTU1NDA1NDgtYThiMi00YWI2LTk1YmYtNGJlYWZlOTMyYmRlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDExMjElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMTIxVDEzNTkyNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWRmMDJmNzMxYzU3MmYzYWUyNGQ1MzFkYmZjNTg2MTM4MGY2MTQ2YTljODcwNTFiMTk5YTQ1YjZiMDI3NDZlM2ImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.tSiS1A3sDRowczWCNC6WRQqdOT3gw5UH7CNp3_o1_0k)
