@@ -2,13 +2,13 @@
 <! DOCTYPE html>
   <html>
     <head>
-
+<title>BugBoard</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=1024, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.13.1/cdn/themes/light.css" />
 <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.13.1/cdn/shoelace-autoloader.js"></script>
 <link rel="stylesheet" href="mainCode.css">
@@ -26,6 +26,9 @@
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" target=”_blank”  href="documentation.html">Documentation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" target=”_blank”  href="https://buymeacoffee.com/abhinavsingwal">Donate ❤️</a>
       </li>
     </ul>
   </div>
@@ -861,8 +864,8 @@
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <button class="nav-link active" id="shodan-tab" data-bs-toggle="tab" data-bs-target="#shodan" type="button" role="tab" aria-controls="shodan" aria-selected="true">Shodan</button>
     <button class="nav-link" id="censys-tab" data-bs-toggle="tab" data-bs-target="#censys" type="button" role="tab" aria-controls="censys" aria-selected="false">Censys</button>
-    <button class="nav-link" id="zoomeye-tab" data-bs-toggle="tab" data-bs-target="#zoomeye" type="button" role="tab" aria-controls="zoomeye" aria-selected="false">Zoom eye</button>
-    <button class="nav-link" id="fora-tab" data-bs-toggle="tab" data-bs-target="#fora" type="button" role="tab" aria-controls="fora" aria-selected="false">fora.info</button>
+    <button class="nav-link" id="zoomeye-tab" data-bs-toggle="tab" data-bs-target="#zoomeye" type="button" role="tab" aria-controls="zoomeye" aria-selected="false">ZoomEye</button>
+    <button class="nav-link" id="fora-tab" data-bs-toggle="tab" data-bs-target="#fora" type="button" role="tab" aria-controls="fora" aria-selected="false">fofa.info</button>
     <button class="nav-link" id="dorks-tab" data-bs-toggle="tab" data-bs-target="#dorks" type="button" role="tab" aria-controls="dorks" aria-selected="false">Google Dorks</button>
     <button class="nav-link" id="pastebin-tab" data-bs-toggle="tab" data-bs-target="#pastebin" type="button" role="tab" aria-controls="pastebin" aria-selected="false">Pastebin</button>
     <button class="nav-link" id="osint-tab" data-bs-toggle="tab" data-bs-target="#osint" type="button" role="tab" aria-controls="osint" aria-selected="false">OSINT</button>
@@ -12671,15 +12674,14 @@ openssl rand -hex 16
 
           </div>
 
-
-        <footer class="bg-body-tertiary text-center text-lg-start">
-  <!-- Copyright -->
+<!-- footer -->
+  <footer class="bg-body-tertiary text-center text-lg-start" style="position: fixed; bottom: 0; width: 100%; z-index: 1000;">
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-Developed by <a href="https://www.linkedin.com/in/bug-bounty-hunter/" target="_blank">Abhinav Singwal</a> - 
-    <a class="text-body" href="https://buymeacoffee.com/abhinavsingwal">BuyMeACoffee</a>
+    Developed by <a href="https://www.linkedin.com/in/bug-bounty-hunter/" target="_blank" style="text-decoration: none;">Abhinav Singwal</a> - 
+    <a class="text-body" href="https://buymeacoffee.com/abhinavsingwal" target="_blank" style="text-decoration: none;">Donate ❤️</a>
   </div>
-  <!-- Copyright -->
 </footer>
+
     </body>
 
     <script>
