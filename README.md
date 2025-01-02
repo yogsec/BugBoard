@@ -74,7 +74,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## Support & Contact 📬  
 - **LinkedIn Profile:** [Bug Bounty Hunter](https://www.linkedin.com/in/bug-bounty-hunter/)  
-- **Donations:** If you find this cheat sheet useful, consider supporting my work via [BuyMeACoffee](https://buymeacoffee.com/abhinavsingwal).  
+- **Donations:** If you find this cheat sheet useful, consider supporting my work via [BuyMeACoffee](https://buymeacoffee.com/yogsec).  
 - **Email:** For inquiries, you can reach me at [abhinavsingwal@gmail.com](mailto:abhinavsingwal@gmail.com).
   
 
