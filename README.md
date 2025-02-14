@@ -8,7 +8,7 @@ BugBoard is a powerful and intuitive dashboard designed specifically for bug hun
 
 ## 🌐 BugBoard Live 👉 [BugBoard Live](https://yogsec.github.io/BugBoard)
 
-[bugBoard]([https://github.com/user-attachments/assets/163419aa-8dc2-4920-92c5-c13c6f63a3d3](https://github.com/yogsec/BugBoard/blob/main/bugboard.png?raw=true))
+![bugBoard]([https://github.com/user-attachments/assets/163419aa-8dc2-4920-92c5-c13c6f63a3d3](https://github.com/yogsec/BugBoard/blob/main/bugboard.png?raw=true)
 
 
 
@@ -59,6 +59,30 @@ BugBoard has an advanced **Pro Edition** for users looking for additional featur
 ## ❤️ Contributions
 
 Contributions are welcome! 🛠️ If you'd like to enhance BugBoard or fix issues, feel free to fork the repository, make changes, and submit a pull request.
+
+---
+## 🌟 Let's Connect!
+
+Hello, Hacker! 👋 We'd love to stay connected with you. Reach out to us on any of these platforms and let's build something amazing together:
+
+🌐 **Website:** [https://yogsec.github.io/yogsec/](https://yogsec.github.io/yogsec/)  
+📜 **Linktree:** [https://linktr.ee/yogsec](https://linktr.ee/yogsec)  
+🔗 **GitHub:** [https://github.com/yogsec](https://github.com/yogsec)  
+💼 **LinkedIn (Company):** [https://www.linkedin.com/company/yogsec/](https://www.linkedin.com/company/yogsec/)  
+📷 **Instagram:** [https://www.instagram.com/yogsec.io/](https://www.instagram.com/yogsec.io/)  
+🐦 **Twitter (X):** [https://x.com/yogsec](https://x.com/yogsec)  
+👨‍💼 **Personal LinkedIn:** [https://www.linkedin.com/in/bug-bounty-hunter/](https://www.linkedin.com/in/bug-bounty-hunter/)  
+📧 **Email:** abhinavsingwal@gmail.com
+
+---
+
+## ☕ Buy Me a Coffee
+
+If you find our work helpful and would like to support us, consider buying us a coffee. Your support keeps us motivated and helps us create more awesome content. ❤️
+
+☕ **Support Us Here:** [https://buymeacoffee.com/yogsec](https://buymeacoffee.com/yogsec)
+
+Thank you for your support! 🚀
 
 ---
 
