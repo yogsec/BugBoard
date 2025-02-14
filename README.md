@@ -8,7 +8,7 @@ BugBoard is a powerful and intuitive dashboard designed specifically for bug hun
 
 ## 🌐 BugBoard Live 👉 [BugBoard Live](https://yogsec.github.io/BugBoard)
 
-![bugBoard]([https://github.com/user-attachments/assets/163419aa-8dc2-4920-92c5-c13c6f63a3d3](https://github.com/yogsec/BugBoard/blob/main/bugboard.png?raw=true))
+[bugBoard]([https://github.com/user-attachments/assets/163419aa-8dc2-4920-92c5-c13c6f63a3d3](https://github.com/yogsec/BugBoard/blob/main/bugboard.png?raw=true))
 
 
 
