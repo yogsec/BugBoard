@@ -61,6 +61,7 @@ BugBoard has an advanced **Pro Edition** for users looking for additional featur
 Contributions are welcome! 🛠️ If you'd like to enhance BugBoard or fix issues, feel free to fork the repository, make changes, and submit a pull request.
 
 ---
+
 ## 🌟 Let's Connect!
 
 Hello, Hacker! 👋 We'd love to stay connected with you. Reach out to us on any of these platforms and let's build something amazing together:
