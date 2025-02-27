@@ -43,12 +43,6 @@ BugBoard is a powerful and intuitive dashboard designed specifically for bug hun
 Security Researcher and creator of BugBoard. Passionate about cybersecurity and open-source contributions.  
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/bug-bounty-hunter/)  
-- 🐙 [GitHub](https://github.com/hacker01x)  
-- ☕ [Buy Me a Coffee](https://buymeacoffee.com/abhinavsingwal)  
-
-Feel free to email me at **abhinavsingwal@gmail.com** for suggestions, queries, or pro edition inquiries.
-
----
 
 ## 🎁 Pro Edition
 
@@ -96,10 +90,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - **Donations:** If you find this cheat sheet useful, consider supporting my work via [BuyMeACoffee](https://buymeacoffee.com/yogsec).  
 - **Email:** For inquiries, you can reach me at [abhinavsingwal@gmail.com](mailto:abhinavsingwal@gmail.com).
   
-
-
-
-
 ---
 
 ### 🚀 Happy Bug Hunting! 🐞✨
