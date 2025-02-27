@@ -27,7 +27,7 @@ BugBoard is a powerful and intuitive dashboard designed specifically for bug hun
 
 ## 🌐 How to Use
 
-1. Visit the live page hosted on **GitHub Pages**: [BugBoard Live](https://hacker01x.github.io/BugBoard).  
+1. Visit the live page hosted on **GitHub Pages**: --> [BugBoard Live](https://yogsec.github.io/BugBoard).  
 2. Explore the dashboard to:
    - Run vulnerability scans.
    - Configure custom parameters for targeted scans.
