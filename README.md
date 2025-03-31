@@ -2,7 +2,6 @@
 
 **BugBoard** is a comprehensive, open-source web application designed to empower **bug hunters** and **security researchers**. With an intuitive interface, powerful automation, and integration of popular cybersecurity tools, BugBoard simplifies vulnerability detection and streamlines the bug bounty process. 🚀
 
-BugBoard is a powerful and intuitive dashboard designed specifically for bug hunters and security researchers. It brings together essential tools and features into a unified platform, streamlining the process of vulnerability detection and management. BugBoard empowers users to efficiently identify, analyze, and address security flaws in web applications while enhancing their workflow through automation and modular design. Whether you're a seasoned security expert or a beginner, BugBoard provides a user-friendly and efficient solution tailored to the needs of the bug hunting community.
 
 <div align="center">
       <a href="https://www.whatsapp.com/channel/0029Vb68FeRFnSzGNOZC3h3x"><img src="https://img.shields.io/static/v1?style=for-the-badge&amp;message=WhatsApp+Channel&amp;color=25D366&amp;logo=&amp;logoColor=FFFFFF&amp;label=" alt="WhatsApp Channel"></a>
@@ -15,9 +14,7 @@ BugBoard is a powerful and intuitive dashboard designed specifically for bug hun
   
 </div>
 
----
-
-## TryBugBoard!🌐 [https://yogsec.github.io/BugBoard](https://yogsec.github.io/BugBoard)
+## Try BugBoard!🌐 [https://yogsec.github.io/BugBoard](https://yogsec.github.io/BugBoard)
 
 ![bugBoard](https://github.com/yogsec/BugBoard/blob/main/bugboard.png)
 
