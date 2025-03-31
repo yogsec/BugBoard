@@ -47,13 +47,6 @@
 
 ---
 
-## 📖 About the Developer
-
-👤 **Abhinav Singwal**  
-Security Researcher and creator of BugBoard. Passionate about cybersecurity and open-source contributions.  
-
-- 💼 [LinkedIn](https://www.linkedin.com/in/bug-bounty-hunter/)  
-
 ## 🎁 Pro Edition
 
 BugBoard has an advanced **Pro Edition** for users looking for additional features and premium support. Contact me at **abhinavsingwal@gmail.com** for more details.
