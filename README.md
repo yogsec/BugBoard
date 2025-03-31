@@ -15,7 +15,7 @@
 </div>
 
 ## Try BugBoard!🌐 [https://yogsec.github.io/BugBoard](https://yogsec.github.io/BugBoard)
-<br>
+
 <br>
 
 
