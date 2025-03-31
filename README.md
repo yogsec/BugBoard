@@ -4,9 +4,20 @@
 
 BugBoard is a powerful and intuitive dashboard designed specifically for bug hunters and security researchers. It brings together essential tools and features into a unified platform, streamlining the process of vulnerability detection and management. BugBoard empowers users to efficiently identify, analyze, and address security flaws in web applications while enhancing their workflow through automation and modular design. Whether you're a seasoned security expert or a beginner, BugBoard provides a user-friendly and efficient solution tailored to the needs of the bug hunting community.
 
+<div align="center">
+      <a href="https://www.whatsapp.com/channel/0029Vb68FeRFnSzGNOZC3h3x"><img src="https://img.shields.io/static/v1?style=for-the-badge&amp;message=WhatsApp+Channel&amp;color=25D366&amp;logo=&amp;logoColor=FFFFFF&amp;label=" alt="WhatsApp Channel"></a>
+  <a href="https://t.me/HackerSecure"><img src="https://img.shields.io/static/v1?style=for-the-badge&amp;message=Telegram+Channel&amp;color=24A1DE&amp;logo=&amp;logoColor=FFFFFF&amp;label=" alt="Telegram Channel"></a>
+  <a href="https://www.linkedin.com/in/cybersecurity-pentester/"><img src="https://img.shields.io/static/v1?style=for-the-badge&amp;message=LinkedIn&amp;color=0A66C2&amp;logo=LinkedIn&amp;logoColor=FFFFFF&amp;label=" alt="LinkedIn"></a>
+  <a href="https://linktr.ee/yogsec"><img src="https://img.shields.io/static/v1?style=for-the-badge&amp;message=LinkTree&amp;color=25D366&amp;logo=&amp;logoColor=FFFFFF&amp;label=" alt="WhatsApp Channel"></a>
+  <a href="https://x.com/home"><img src="https://img.shields.io/static/v1?style=for-the-badge&amp;message=X&amp;color=000000&amp;logo=&amp;logoColor=FFFFFF&amp;label=" alt="Lichess"></a>
+  <a href="mailto:abhinavsingwal@gmail.com?subject=Hi%20YogSec%20,%20nice%20to%20meet%20you!"><img alt="Email" src="https://img.shields.io/static/v1?style=for-the-badge&amp;message=Gmail&amp;color=EA4335&amp;logo=Gmail&amp;logoColor=FFFFFF&amp;label="></a>
+  <a href="https://yogsec.github.io/yogsec/"><img src="https://img.shields.io/static/v1?style=for-the-badge&amp;message=Website&amp;color=FFFFC5&amp;logo=&amp;logoColor=FFFFFF&amp;label=" alt="Telegram Channel"></a>  
+  
+</div>
+
 ---
 
-## 🌐 BugBoard Live 👉 [BugBoard Live](https://yogsec.github.io/BugBoard)
+## TryBugBoard!🌐 [https://yogsec.github.io/BugBoard](https://yogsec.github.io/BugBoard)
 
 ![bugBoard](https://github.com/yogsec/BugBoard/blob/main/bugboard.png)
 
@@ -27,7 +38,7 @@ BugBoard is a powerful and intuitive dashboard designed specifically for bug hun
 
 ## 🌐 How to Use
 
-1. Visit the live page hosted on **GitHub Pages**: --> [BugBoard Live](https://yogsec.github.io/BugBoard).  
+1. Visit the live page hosted on **GitHub Pages**: --> [https://yogsec.github.io/BugBoard](https://yogsec.github.io/BugBoard).  
 2. Explore the dashboard to:
    - Run vulnerability scans.
    - Configure custom parameters for targeted scans.
@@ -54,42 +65,3 @@ BugBoard has an advanced **Pro Edition** for users looking for additional featur
 
 Contributions are welcome! 🛠️ If you'd like to enhance BugBoard or fix issues, feel free to fork the repository, make changes, and submit a pull request.
 
----
-
-## 🌟 Let's Connect!
-
-Hello, Hacker! 👋 We'd love to stay connected with you. Reach out to us on any of these platforms and let's build something amazing together:
-
-🌐 **Website:** [https://yogsec.github.io/yogsec/](https://yogsec.github.io/yogsec/)  
-📜 **Linktree:** [https://linktr.ee/yogsec](https://linktr.ee/yogsec)  
-🔗 **GitHub:** [https://github.com/yogsec](https://github.com/yogsec)  
-💼 **LinkedIn (Company):** [https://www.linkedin.com/company/yogsec/](https://www.linkedin.com/company/yogsec/)  
-📷 **Instagram:** [https://www.instagram.com/yogsec.io/](https://www.instagram.com/yogsec.io/)  
-🐦 **Twitter (X):** [https://x.com/yogsec](https://x.com/yogsec)  
-👨‍💼 **Personal LinkedIn:** [https://www.linkedin.com/in/cybersecurity-pentester/](https://www.linkedin.com/in/cybersecurity-pentester/)  
-📧 **Email:** abhinavsingwal@gmail.com
-
----
-
-## ☕ Buy Me a Coffee
-
-If you find our work helpful and would like to support us, consider buying us a coffee. Your support keeps us motivated and helps us create more awesome content. ❤️
-
-☕ **Support Us Here:** [https://buymeacoffee.com/yogsec](https://buymeacoffee.com/yogsec)
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
----
-
-## Support & Contact 📬  
-- **LinkedIn Profile:** [Bug Bounty Hunter](https://www.linkedin.com/in/bug-bounty-hunter/)  
-- **Donations:** If you find this useful, consider supporting my work via [BuyMeACoffee](https://buymeacoffee.com/yogsec).  
-- **Email:** For inquiries, you can reach me at [abhinavsingwal@gmail.com](mailto:abhinavsingwal@gmail.com).
-  
----
-
-### 🚀 Happy Bug Hunting! 🐞✨
