@@ -2,6 +2,7 @@
 
 BugBoard is a comprehensive, open-source web application designed to empower bug hunter* and security researchers. With an intuitive interface, powerful automation, and integration of popular cybersecurity tools, BugBoard simplifies vulnerability detection and streamlines the bug bounty process. 🚀
 
+[![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=yogsec&repo=bugboard&theme=merko)](https://github.com/yogsec/bugboard)
 
 <div align="center" style="margin: 30px 0;">
   <a href="https://www.whatsapp.com/channel/0029Vb68FeRFnSzGNOZC3h3x">
