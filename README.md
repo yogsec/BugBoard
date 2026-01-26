@@ -25,6 +25,7 @@ BugBoard is a comprehensive, open-source web application designed to empower bug
 
 
 <br>
+![BugBoard](https://github.com/yogsec/BugBoard/blob/main/bugboard.png)
 
 <br>
 
