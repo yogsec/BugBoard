@@ -1,6 +1,6 @@
-# 🐞 BugBoard - Bug Hunter Dashboard 🛠️
+# BugBoard - Bug Hunter's Dashboard
 
-BugBoard is a comprehensive, open-source web application designed to empower bug hunter* and security researchers. With an intuitive interface, powerful automation, and integration of popular cybersecurity tools, BugBoard simplifies vulnerability detection and streamlines the bug bounty process. 🚀
+BugBoard is a comprehensive, open-source web application designed to empower bug hunter* and security researchers. With an intuitive interface, powerful automation, and integration of popular cybersecurity tools, BugBoard simplifies vulnerability detection and streamlines the bug bounty process.
 
 
 <div align="center" style="margin: 30px 0;">
@@ -35,18 +35,18 @@ BugBoard is a comprehensive, open-source web application designed to empower bug
 
 ---
 
-## 🌟 Features
+## Features
 
-- 🔍 **Comprehensive Vulnerability Assessment**: Detect vulnerabilities like SQL Injection, XSS, CSRF, and more.
-- ⚙️ **Integrated Cybersecurity Tools**: Run commands from tools like Nmap, OWASP ZAP, and Burp Suite from one platform.
-- 🤖 **Automation**: Save time with automated scans and reduced manual effort.
-- 🖥️ **Embedded Terminal**: Execute custom commands directly within the dashboard.
-- 🧩 **Modular Design**: Organized sections for targeting specific vulnerabilities.
-- 🌐 **User-Friendly Interface**: Accessible for beginners and powerful for experts.
+- **Comprehensive Vulnerability Assessment**: Detect vulnerabilities like SQL Injection, XSS, CSRF, and more.
+- **Integrated Cybersecurity Tools**: Run commands from tools like Nmap, OWASP ZAP, and Burp Suite from one platform.
+- **Automation**: Save time with automated scans and reduced manual effort.
+- **Embedded Terminal**: Execute custom commands directly within the dashboard.
+- **Modular Design**: Organized sections for targeting specific vulnerabilities.
+- **User-Friendly Interface**: Accessible for beginners and powerful for experts.
 
 ---
 
-## 🌐 How to Use
+## How to Use
 
 1. Visit the live page hosted on **GitHub Pages**: --> [https://yogsec.github.io/BugBoard](https://yogsec.github.io/BugBoard).  
 2. Explore the dashboard to:
@@ -58,13 +58,13 @@ BugBoard is a comprehensive, open-source web application designed to empower bug
 
 ---
 
-## 🎁 Pro Edition
+## Pro Edition
 
 BugBoard has an advanced **Pro Edition** for users looking for additional features and premium support. Contact me at **abhinavsingwal@gmail.com** for more details.
 
 ---
 
-## ❤️ Contributions
+## Contributions
 
 Contributions are welcome! 🛠️ If you'd like to enhance BugBoard or fix issues, feel free to fork the repository, make changes, and submit a pull request.
 
