@@ -23,4 +23,4 @@ BugBoard is a open-source web application designed to empower students. With an 
 
 ## How to Use
 
-Visit the live page hosted on **GitHub Pages**: --> [https://yogsec.github.io/BugBoard](https://yogsec.github.io/BugBoard).  
+Visit the live page hosted on **GitHub Pages**: [https://yogsec.github.io/BugBoard](https://yogsec.github.io/BugBoard).  
